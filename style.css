@@ -1,0 +1,145 @@
+/* 기본 스타일 */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Segoe UI', 'Malgun Gothic', sans-serif;
+    background-color: #1a1a1a;
+}
+
+/* 게임 컨테이너 */
+#game-container {
+    position: relative;
+    width: 1280px; /* 이미지 원본 너비 */
+    height: 720px; /* 이미지 원본 높이 */
+    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* 클릭 가능한 영역 공통 스타일 */
+.clickable-area {
+    position: absolute;
+    border: 2px dashed rgba(255, 255, 0, 0.6);
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 10px;
+}
+
+.clickable-area:hover {
+    background-color: rgba(255, 255, 0, 0.4);
+}
+
+/* 오브젝트별 위치 및 크기 지정 */
+#globe { top: 480px; left: 180px; width: 150px; height: 160px; border-radius: 50%; }
+#chalkboard { top: 155px; left: 320px; width: 620px; height: 180px; }
+#clock { top: 90px; left: 400px; width: 85px; height: 50px; }
+#chest { top: 510px; left: 630px; width: 300px; height: 200px; }
+#door { top: 150px; left: 815px; width: 105px; height: 350px; }
+#note { top: 585px; left: 45px; width: 170px; height: 140px; display: none; /* 초기엔 숨김 처리 */ }
+
+/* 인벤토리 스타일 */
+#inventory {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+#inventory h3 { margin: 0 0 10px 0; text-align: center;}
+#inventory-slots {
+    display: flex;
+    gap: 10px;
+    font-size: 2.5em;
+    font-weight: bold;
+    min-width: 150px;
+    justify-content: center;
+    color: #ffeb3b;
+}
+
+/* 모달 스타일 */
+#modal {
+    display: none; /* 평소에는 숨겨둠 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+#modal.is-visible {
+    display: flex; /* is-visible 클래스가 추가되면 보여줌 */
+}
+
+#modal-content {
+    background-color: #f4f4f4;
+    padding: 30px 40px;
+    border-radius: 10px;
+    text-align: center;
+    width: 450px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+#modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #888;
+}
+#puzzle-title {
+    margin-top: 0;
+    color: #333;
+}
+#puzzle-question {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    color: #555;
+    line-height: 1.6;
+}
+#puzzle-answer {
+    width: 80%;
+    padding: 12px;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+#puzzle-submit {
+    padding: 12px 25px;
+    font-size: 1.1em;
+    cursor: pointer;
+    background-color: #337ab7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+#puzzle-submit:hover {
+    background-color: #286090;
+}
+#feedback {
+    margin-top: 15px;
+    font-weight: bold;
+    min-height: 20px;
+    font-size: 1.1em;
+}
+.feedback-correct { color: #28a745; }
+.feedback-incorrect { color: #dc3545; }

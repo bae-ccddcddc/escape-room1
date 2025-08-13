@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>방탈출: 비밀의 교실</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-container">
+        <!-- 
+            배경 이미지입니다. 인터넷이 연결되어 있어야 보입니다.
+            만약 이미지가 보이지 않으면, 아래 src의 주소를 복사해서 이미지를 다운로드 받은 후,
+            파일들을 저장한 폴더에 'background.jpg'로 저장하고 src="background.jpg"로 수정하세요.
+        -->
+        <img src="bg_class1.jpg" alt="게임 배경: 교실" class="background-image">
+
+        <!-- 클릭 가능한 오브젝트: 좌표/크기 세부 조정 -->
+        <div class="clickable-area" id="globe" title="지구본 조사하기"
+             style="position:absolute; left:145px; top:370px; width:45px; height:45px; border-radius:50%;"></div>
+        <div class="clickable-area" id="chalkboard" title="칠판 조사하기"
+             style="position:absolute; left:70px; top:90px; width:270px; height:65px;"></div>
+        <div class="clickable-area" id="clock" title="디지털 시계 조사하기"
+             style="position:absolute; left:470px; top:55px; width:38px; height:38px; border-radius:50%;"></div>
+        <div class="clickable-area" id="chest" title="앞 책상의 상자 조사하기"
+             style="position:absolute; left:355px; top:420px; width:60px; height:35px;"></div>
+        <div class="clickable-area" id="door" title="문 열기"
+             style="position:absolute; left:730px; top:180px; width:55px; height:170px;"></div>
+        <!-- 쪽지는 처음에 숨김 -->
+        <div class="clickable-area" id="note" title="책상 위 쪽지 읽기"
+             style="position:absolute; left:285px; top:440px; width:40px; height:25px; display:none;"></div>
+
+        <!-- 인벤토리: 획득한 숫자 표시 -->
+        <div id="inventory">
+            <h3>획득한 숫자 조각</h3>
+            <div id="inventory-slots"></div>
+        </div>
+    </div>
+
+    <!-- 퍼즐 및 정답 입력을 위한 모달 -->
+    <div id="modal">
+        <div id="modal-content">
+            <span id="modal-close">&times;</span>
+            <h3 id="puzzle-title"></h3>
+            <p id="puzzle-question"></p>
+            <input type="text" id="puzzle-answer" placeholder="정답을 입력하세요">
+            <button id="puzzle-submit">확인</button>
+            <p id="feedback"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
